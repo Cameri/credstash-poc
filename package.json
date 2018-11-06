@@ -1,0 +1,13 @@
+{
+  "name": "credstash-poc",
+  "version": "1.0.0",
+  "description": "Credstash Proof-of-concept for Nest Wealth",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	  "secrets:put": "credstash -r $AWS_REGION -p $AWS_PROFILE put -a dev-credstash-poc @secrets.json stage=$STAGE tenant=$TENANT",
+	  "secrets:get": "credstash -r $AWS_REGION -p $AWS_PROFILE get dev-credstash-poc stage=$STAGE tenant=$TENANT"
+  },
+  "author": "Team Red, Nest Wealth",
+  "license": "ISC"
+}
