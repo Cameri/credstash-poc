@@ -1,5 +1,4 @@
 # Credstash proof-of-concept
-Author: Team Red
 
 ## Purpose
 Evaluate the feasibility of using credstash to manage secrets in the cloud,
@@ -13,9 +12,13 @@ and to provide said secrets to a multi-tenant NodeJS application/service.
 
 ## Installation
 * Follow the **Quick Installation** steps in credstash's [README.md](https://github.com/fugue/credstash/blob/master/README.md)
+* Install virtualenv with `pip install virtualenv`
+* Create virtualenv with `virtualenv --python=$(which python3) .venv`
+* Load virtualenv with `source .venv/bin/activate`
 * Install credstash with `pip install credtash`
 
-# Adding/updating new secrets
+# CLI commands
+## Adding/updating new secrets
 
 Secrets can be added with the following command:
 
@@ -24,13 +27,13 @@ Secrets can be added with the following command:
 The `-a` option ensures that a new version is automatically created for given key.
 Stored secrets are immutable so a new version will be created when rotating them.
 
-# Fetching secrets
+## Fetching secrets (CLI)
 
 Secrets can be obtained with the following command:
 
 `credstash get <key> stage=$NW_STAGE tenant=$NW_TENANT`
 
-# Deleting secrets
+## Deleting secrets (CLI)
 
 Secrets can be deleted with the following command:
 
